@@ -32,7 +32,7 @@ def export_tiffs(project_path : str):
 
 	block_size = project.get_block_size()
 	block_count = resolution_map[-1]
-	blocks_per_dimension = block_count ** (1.0 / 3.0)
+	blocks_per_dimension = round(block_count ** (1.0 / 3.0))
 	resolution = (block_size * blocks_per_dimension).astype(np.uint64)
 
 	if EXPORT_IMAGES:
